@@ -10,8 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
-import os, random, string
+import os
+import random
+import string
 from pathlib import Path
+
 from dotenv import load_dotenv
 
 load_dotenv()  # take environment variables from .env.
@@ -31,7 +34,7 @@ if not SECRET_KEY:
 DEBUG = 'RENDER' not in os.environ
 
 # Docker HOST
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost','127.0.0.1']
 
 # Add here your deployment HOSTS
 CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'http://localhost:5085']
