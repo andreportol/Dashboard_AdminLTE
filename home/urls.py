@@ -3,9 +3,11 @@ from django.urls import path
 
 from home import views
 
+from .views import IndexTemplateView
+
 urlpatterns = [
     # Pages
-    path('', views.index),
+    path('', IndexTemplateView.as_view(), name='index'),
     path('dashboard-v2/', views.index2, name='dashboardv2'),
     path('dashboard-v3/', views.index3, name='dashboardv3'),
     path('widgets/', views.widgets, name='widgets'),
